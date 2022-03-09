@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-p-=l$b5f)4=ik0krzrlvcj)&smm1rg)19%&$&%wnbozdy1eoen
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['4f92-115-96-153-91.ngrok.io','127.0.0.1']
 
 
 # Application definition
@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'shop',
     'cart',
     'orders',
+    'paypal.standard.ipn',
+    'payment',
 ]
 
 MIDDLEWARE = [
@@ -121,6 +123,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -132,3 +135,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+# django-paypal settings
+PAYPAL_RECEIVER_EMAIL = 'prabhatwebcrone@gmail.com'
+PAYPAL_TEST = True

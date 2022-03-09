@@ -1,0 +1,48 @@
+<html>
+<body>
+<h1>My Shop</h1>
+<p>
+Invoice no. {{ id }}</br>
+<span class="secondary">
+{{ created|date:"M d, Y" }}
+</span>
+</p>
+<h3>Bill to</h3>
+<p>
+{{ first_name }} {{ last_name }}<br>
+{{ email }}<br>
+{{ address }}<br>
+{{ postal_code }}, {{ city }}
+</p>
+
+<h3>Items bought</h3>
+<table>
+<thead>
+<tr>
+<th>Product</th>
+<th>Price</th>
+<th>Quantity</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+
+<tr class="row{% cycle '1' '2' %}">
+   
+<td>{{ product_name }}</td>
+<td class="num">${{ price }}</td>
+<td class="num">{{ quantity }}</td>
+<td class="num">${{ get_cost }}</td>
+</tr>
+
+<tr class="total">
+<td colspan="3">Total</td>
+<td class="num">${{ get_cost }}</td>
+</tr>
+</tbody>
+</table>
+<span class="{% if order.paid %}paid{% else %}pending{% endif %}">
+{% if order.paid %}Paid{% else %}Pending payment{% endif %}
+</span>
+</body>
+</html>
