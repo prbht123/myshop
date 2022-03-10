@@ -2,5 +2,8 @@
 {% block title %}Pay using PayPal{% endblock %}
 {% block content %}
 <h1>Pay using PayPal</h1>
+    
 {{ form.render }}
+{% csrf_token %}
+
 {% endblock %}
