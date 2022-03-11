@@ -4,6 +4,7 @@ from shop.models import Product
 from .cart import Cart
 from .forms import CartAddProductForm
 from django.views.decorators.csrf import csrf_exempt
+from coupons.forms import CouponApplyForm
 
 # Create your views here.
 @csrf_exempt
@@ -27,4 +28,5 @@ def cart_detail(request):
     cart = Cart(request)
     for item in cart:
        item['update_quantity_form'] = CartAddProductForm(initial={'quantity': item['quantity'],'update': True})
-    return render(request, 'cart/detail.html', {'cart': cart})
+    coupon_apply_form = CouponApplyForm()
+    return render(request, 'cart/detail.html', {'cart': cart,'coupon_apply_form': coupon_apply_form})

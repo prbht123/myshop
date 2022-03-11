@@ -34,6 +34,13 @@ Invoice no. {{ order.id }}</br>
 <td class="num">${{ item.get_cost }}</td>
 </tr>
 {% endfor %}
+{% if order.coupon %}
+<tr class="row{% cycle '1' '2' %}" style=" height:44px;">
+    <td class="num">{{ order.coupon }} ({{ order.discount }}% off)</td><td></td><td></td>
+    <td><span class="float-right">-${{ order.get_discount_cost }}  </span></td>
+</tr>
+{% endif %}
+
 <tr class="total" style="background-color:cornflowerblue;color: aliceblue; height:44px;">
 <td colspan="3">Total</td>
 <td class="num">${{ order.get_total_cost }}</td>

@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-p-=l$b5f)4=ik0krzrlvcj)&smm1rg)19%&$&%wnbozdy1eoen
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['95c1-115-96-136-91.ngrok.io','127.0.0.1']
+ALLOWED_HOSTS = ['527d-115-96-113-12.ngrok.io','127.0.0.1']
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'orders',
     'paypal.standard.ipn',
     'payment',
+    'coupons',
 ]
 
 MIDDLEWARE = [
@@ -134,11 +135,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'prabhatwebcrone@gmail.com'
-EMAIL_HOST_PASSWORD = 'XXXXXXXXXXX'
+EMAIL_HOST_PASSWORD = 'XXXXXXXXXXXX'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
